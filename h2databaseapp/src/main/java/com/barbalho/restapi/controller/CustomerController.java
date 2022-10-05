@@ -57,7 +57,7 @@ public class CustomerController {
 		return new ResponseEntity<Customer>(HttpStatus.NOT_FOUND);
 	}
 	
-	@PutMapping("/customer/{id}")
+	@PutMapping("/customers/{id}")
 	public ResponseEntity<Customer> updateCustomer(@RequestBody Customer customer){
 		try {
 			return new ResponseEntity<Customer>(customerRepo.save(customer), HttpStatus.OK);
@@ -66,7 +66,7 @@ public class CustomerController {
 		}
 	}
 	
-	@DeleteMapping("/customer/{id}")
+	@DeleteMapping("/customers/{id}")
 	public ResponseEntity<HttpStatus> deleteCustomer(@PathVariable Long id){
 		try {
 			Optional<Customer> customer = customerRepo.findById(id);			
